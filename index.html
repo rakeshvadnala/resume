@@ -3,868 +3,601 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rakesh Vadnala | IAM Consultant</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<title>Rakesh Vadnala — Identity &amp; Access Management Consultant</title>
+<meta name="description" content="Rakesh Vadnala — IAM Technical Consultant specializing in SailPoint IdentityIQ and Saviynt Enterprise Identity Cloud. Application onboarding, governance, connector development, and workflow automation.">
+<meta name="keywords" content="IAM, Identity and Access Management, SailPoint, SailPoint IdentityIQ, Saviynt, Saviynt EIC, RBAC, Access Governance, Dubai">
+<meta name="author" content="Rakesh Vadnala">
 
-<style>
-  :root {
-    --bg-start: #0a0f1e;
-    --bg-mid: #0d1a2f;
-    --bg-end: #0a1628;
-    --accent: #00d4ff;
-    --accent2: #7c6bff;
-    --accent3: #00ffb2;
-    --glass-bg: rgba(255,255,255,0.055);
-    --glass-border: rgba(255,255,255,0.12);
-    --glass-hover: rgba(255,255,255,0.09);
-    --text-primary: #f0f4ff;
-    --text-secondary: rgba(200,215,255,0.7);
-    --text-muted: rgba(150,175,220,0.5);
-    --glow: 0 0 30px rgba(0,212,255,0.12);
-    --card-shadow: 0 8px 40px rgba(0,0,0,0.4);
-  }
+<meta property="og:title" content="Rakesh Vadnala — Identity & Access Management Consultant">
+<meta property="og:description" content="IAM Technical Consultant specializing in SailPoint IdentityIQ and Saviynt Enterprise Identity Cloud.">
+<meta property="og:type" content="website">
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230B1220%22/><text x=%2250%22 y=%2266%22 font-size=%2246%22 font-family=%22monospace%22 fill=%22%23E8A33D%22 text-anchor=%22middle%22>RV</text></svg>">
 
-  body {
-    font-family: 'Sora', sans-serif;
-    background: var(--bg-start);
-    background-image:
-      radial-gradient(ellipse at 20% 20%, rgba(0,212,255,0.07) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, rgba(124,107,255,0.07) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 50%, rgba(0,255,178,0.04) 0%, transparent 60%);
-    min-height: 100vh;
-    color: var(--text-primary);
-    padding: 30px 20px 60px;
-    position: relative;
-  }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.012) 60px, rgba(255,255,255,0.012) 61px),
-      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.008) 80px, rgba(255,255,255,0.008) 81px);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .page-wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 1120px;
-    margin: 0 auto;
-  }
-
-  /* FLOATING ACTIONS */
-  .fab-group {
-    position: fixed;
-    top: 24px;
-    right: 24px;
-    z-index: 1000;
-    display: flex;
-    gap: 10px;
-  }
-
-  .fab {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    border: 1px solid var(--glass-border);
-    background: rgba(10,15,30,0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 50px;
-    color: var(--text-primary);
-    font-family: 'Sora', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-    letter-spacing: 0.01em;
-  }
-
-  .fab:hover {
-    background: rgba(0,212,255,0.12);
-    border-color: rgba(0,212,255,0.4);
-    color: var(--accent);
-    box-shadow: 0 4px 24px rgba(0,212,255,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
-    transform: translateY(-2px);
-  }
-
-  .fab i { font-size: 14px; }
-
-  /* GRID LAYOUT */
-  .resume-grid {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 16px;
-  }
-
-  /* GLASS CARD */
-  .card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    border-radius: 18px;
-    padding: 24px 26px;
-    box-shadow: var(--card-shadow), inset 0 1px 0 rgba(255,255,255,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  }
-
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 50px rgba(0,0,0,0.5), var(--glow), inset 0 1px 0 rgba(255,255,255,0.1);
-    border-color: rgba(0,212,255,0.2);
-  }
-
-  /* HEADER */
-  .header-card {
-    grid-column: span 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 34px;
-    background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(124,107,255,0.06));
-  }
-
-  .header-left h1 {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #ffffff;
-    line-height: 1.15;
-    margin-bottom: 6px;
-  }
-
-  .header-left .title-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
-    background: rgba(0,212,255,0.1);
-    border: 1px solid rgba(0,212,255,0.25);
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.02em;
-    margin-top: 2px;
-  }
-
-  .header-left .title-badge::before {
-    content: '';
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 8px var(--accent);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(0.85); }
-  }
-
-  .header-right {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .contact-item:hover { color: var(--accent); }
-
-  .contact-item i {
-    font-size: 13px;
-    color: var(--accent);
-    opacity: 0.7;
-    width: 16px;
-    text-align: center;
-  }
-
-  /* SECTION TITLE */
-  .section-title {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(0,212,255,0.3), transparent);
-  }
-
-  /* TIMELINE / EXPERIENCE */
-  .xp-item {
-    position: relative;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    border-left: 1px solid rgba(0,212,255,0.2);
-  }
-
-  .xp-item:last-child {
-    border-left-color: transparent;
-    padding-bottom: 0;
-  }
-
-  .xp-item::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 4px;
-    width: 9px; height: 9px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 10px rgba(0,212,255,0.5);
-  }
-
-  .xp-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 3px;
-  }
-
-  .xp-meta {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
-    margin-bottom: 6px;
-  }
-
-  .xp-company {
-    color: var(--accent2);
-    opacity: 0.9;
-  }
-
-  /* SKILL LIST */
-  .skill-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .skill-list li {
-    font-size: 13.5px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    padding-left: 14px;
-    position: relative;
-  }
-
-  .skill-list li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 11px;
-    top: 1px;
-  }
-
-  /* BADGES */
-  .badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4px;
-  }
-
-  .badge {
-    padding: 5px 13px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    border: 1px solid;
-    transition: all 0.2s;
-    cursor: default;
-  }
-
-  .badge-cyan {
-    background: rgba(0,212,255,0.08);
-    border-color: rgba(0,212,255,0.25);
-    color: #7de8ff;
-  }
-
-  .badge-purple {
-    background: rgba(124,107,255,0.08);
-    border-color: rgba(124,107,255,0.25);
-    color: #b3aaff;
-  }
-
-  .badge-green {
-    background: rgba(0,255,178,0.07);
-    border-color: rgba(0,255,178,0.2);
-    color: #5fffd1;
-  }
-
-  .badge-orange {
-    background: rgba(255,163,0,0.08);
-    border-color: rgba(255,163,0,0.25);
-    color: #ffd080;
-  }
-
-  .badge:hover { transform: translateY(-2px); filter: brightness(1.2); }
-
-  /* SUMMARY */
-  .summary-text {
-    font-size: 14px;
-    line-height: 1.8;
-    color: var(--text-secondary);
-  }
-
-  .summary-text strong { color: var(--accent); font-weight: 600; }
-
-  /* STAT ROW */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 6px;
-  }
-
-  .stat-box {
-    background: rgba(0,212,255,0.05);
-    border: 1px solid rgba(0,212,255,0.12);
-    border-radius: 12px;
-    padding: 12px;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--accent);
-    font-family: 'JetBrains Mono', monospace;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  /* RIGHT COLUMN */
-  .right-col {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .left-col {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  /* TECH STACK LIST */
-  .tech-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .tech-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .tech-name {
-    font-size: 13px;
-    color: var(--text-secondary);
-    min-width: 80px;
-  }
-
-  .tech-bar-track {
-    flex: 1;
-    height: 4px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .tech-bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    box-shadow: 0 0 8px rgba(0,212,255,0.4);
-  }
-
-  /* PROGRAMMING LANGS */
-  .lang-pill {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    margin-bottom: 8px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    transition: all 0.2s;
-  }
-
-  .lang-pill:hover {
-    background: rgba(0,212,255,0.07);
-    border-color: rgba(0,212,255,0.25);
-    color: var(--text-primary);
-  }
-
-  .lang-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  /* DIVIDER */
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
-    margin: 4px 0;
-  }
-
-  /* PRINT / PDF OVERRIDE */
-  @media print {
-    body { background: #fff !important; color: #111 !important; padding: 0; }
-    body::before { display: none; }
-    .fab-group { display: none !important; }
-    .card {
-      background: #fff !important;
-      border: 1px solid #e0e0e0 !important;
-      backdrop-filter: none !important;
-      box-shadow: none !important;
-      color: #111 !important;
-    }
-    .card:hover { transform: none !important; }
-    .header-left h1 { -webkit-text-fill-color: #111 !important; color: #111 !important; }
-    .section-title, .xp-meta, .contact-item, .skill-list li,
-    .summary-text, .tech-name, .lang-pill, .stat-label { color: #444 !important; }
-    .stat-num { color: #0070a0 !important; }
-    .badge-cyan, .badge-purple, .badge-green, .badge-orange { color: #333 !important; }
-    .tech-bar-fill { background: #0070a0 !important; }
-    .resume-grid { grid-template-columns: 1fr 280px !important; }
-    .page-break { page-break-before: always; }
-  }
-
-  @media (max-width: 840px) {
-    .resume-grid { grid-template-columns: 1fr; }
-    .header-card { flex-direction: column; gap: 20px; }
-    .header-right { text-align: left; }
-    .contact-item { justify-content: flex-start; }
-    .fab-group { top: 12px; right: 12px; }
-    .fab span { display: none; }
-    .fab { padding: 10px 12px; }
-  }
-</style>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/custom-ui.css">
 </head>
-<body>
+<body data-theme="dark">
 
-<div class="fab-group">
-  <button class="fab" onclick="toggleTheme()" id="themeBtn">
-    <i class="fa-solid fa-circle-half-stroke"></i>
-    <span>Toggle</span>
-  </button>
-  <button class="fab" onclick="exportPDF()">
-    <i class="fa-solid fa-file-arrow-down"></i>
-    <span>Export PDF</span>
-  </button>
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__badge">
+    <span class="preloader__pulse"></span>
+    <span class="preloader__label">AUTHENTICATING</span>
+  </div>
 </div>
 
-<div class="page-wrap">
-<div class="resume-grid" id="resume">
+<!-- ============ SKIP LINK ============ -->
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ── HEADER ─────────────────────────────────────────── -->
-  <div class="card header-card">
-    <div class="header-left">
-      <h1>Rakesh Vadnala</h1>
-      <div class="title-badge">IAM Technical Consultant · SailPoint IIQ</div>
-    </div>
-    <div class="header-right">
-      <a class="contact-item" href="#">
-        <i class="fa-solid fa-location-dot"></i> Dubai, UAE
-      </a>
-      <a class="contact-item" href="mailto:rakeshvadnala@gmail.com">
-        <i class="fa-solid fa-envelope"></i> rakeshvadnala@gmail.com
-      </a>
-      <a class="contact-item" href="https://linkedin.com/in/rakeshvadnala" target="_blank">
-        <i class="fa-brands fa-linkedin"></i> linkedin.com/in/rakeshvadnala
-      </a>
+<!-- ============ BACKGROUND LAYERS ============ -->
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-nodes" id="bgNodes" aria-hidden="true"></div>
+
+<!-- ============ HEADER / NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-inner">
+    <a href="#home" class="brand" aria-label="Rakesh Vadnala — home">
+      <span class="brand__mark">RV</span>
+      <span class="brand__text">
+        <span class="brand__name">Rakesh Vadnala</span>
+        <span class="brand__role">IAM Technical Consultant</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="#about" class="nav__link" data-nav>About</a></li>
+        <li><a href="#expertise" class="nav__link" data-nav>Expertise</a></li>
+        <li><a href="#experience" class="nav__link" data-nav>Experience</a></li>
+        <li><a href="#capabilities" class="nav__link" data-nav>Capabilities</a></li>
+        <li><a href="#certifications" class="nav__link" data-nav>Certifications</a></li>
+        <li><a href="#contact" class="nav__link" data-nav>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+        <svg class="icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.5 12H2.1M21.9 12h-2.4M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M5.6 18.4l1.7-1.7M16.7 7.3l1.7-1.7"/></svg>
+      </button>
+      <a href="#contact" class="btn btn--ghost btn--sm nav-cta">Request Access</a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 
-  <!-- ── LEFT COLUMN ────────────────────────────────────── -->
-  <div class="left-col">
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+</header>
 
-    <!-- Summary -->
-    <div class="card">
-      <div class="section-title">Professional Summary</div>
-      <p class="summary-text">
-        IAM professional with <strong>5+ years</strong> of progressive experience from Intern to Technical Consultant at RNS Technology Services. Expert in <strong>SailPoint IdentityIQ</strong>, Active Directory, and enterprise application integrations, delivering secure identity governance solutions across <strong>India and the UAE</strong>. Deep expertise in IAM/PAM systems, product implementation, and enterprise architecture across Banking, Telecom, Defence, and Healthcare sectors.
-      </p>
-      <div class="stats-row" style="margin-top:18px;">
-        <div class="stat-box">
-          <div class="stat-num">5+</div>
-          <div class="stat-label">Years Exp.</div>
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul class="mobile-menu__list">
+    <li><a href="#about" data-nav>About</a></li>
+    <li><a href="#expertise" data-nav>Expertise</a></li>
+    <li><a href="#experience" data-nav>Experience</a></li>
+    <li><a href="#capabilities" data-nav>Capabilities</a></li>
+    <li><a href="#certifications" data-nav>Certifications</a></li>
+    <li><a href="#contact" data-nav>Contact</a></li>
+  </ul>
+  <a href="Rakesh_Vadnala_Resume.pdf" class="btn btn--primary" download id="mobileResumeBtn">Download Résumé</a>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="container hero__grid">
+
+      <div class="hero__copy">
+        <p class="eyebrow reveal-up"><span class="eyebrow__dot"></span> Identity &amp; Access Management</p>
+        <h1 class="hero__title reveal-up">
+          Designing access that's<br>
+          <span class="type-target" id="typeTarget">provisioned</span><span class="type-cursor">|</span><br>
+          the moment it's earned.
+        </h1>
+        <p class="hero__lede reveal-up">
+          5+ years engineering identity governance across <strong>SailPoint IdentityIQ</strong> and
+          <strong>Saviynt Enterprise Identity Cloud</strong> — connector integration, RBAC, lifecycle
+          automation, and audit-ready compliance for enterprise environments.
+        </p>
+
+        <div class="hero__actions reveal-up">
+          <a href="Rakesh_Vadnala_Resume.pdf" class="btn btn--primary" download id="resumeBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0-4.5-4.5M12 16l4.5-4.5M4 20h16"/></svg>
+            Download Résumé
+          </a>
+          <a href="#contact" class="btn btn--outline">Get in touch</a>
         </div>
-        <div class="stat-box">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Projects</div>
+
+        <div class="hero__meta reveal-up">
+          <div class="meta-item">
+            <span class="meta-item__value" data-count="5" data-suffix="+">0</span>
+            <span class="meta-item__label">Years in IAM</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-item__value" data-count="2">0</span>
+            <span class="meta-item__label">Platforms mastered</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-item__value" data-count="12" data-suffix="+">0</span>
+            <span class="meta-item__label">App types onboarded</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-item__value" data-count="5">0</span>
+            <span class="meta-item__label">Certifications</span>
+          </div>
         </div>
-        <div class="stat-box">
-          <div class="stat-num">4</div>
-          <div class="stat-label">Sectors</div>
+      </div>
+
+      <div class="hero__visual reveal-up" id="badgeWrap">
+        <div class="id-badge" id="idBadge">
+          <div class="id-badge__scanline"></div>
+          <div class="id-badge__strip">
+            <span>ENTERPRISE IDENTITY GOVERNANCE</span>
+          </div>
+          <div class="id-badge__body">
+            <div class="id-badge__top">
+              <span class="id-badge__chip"></span>
+              <span class="id-badge__status">
+                <span class="status-dot"></span> ACCESS GRANTED
+              </span>
+            </div>
+
+            <div class="id-badge__id">
+              <div class="id-badge__avatar">RV</div>
+              <div class="id-badge__fields">
+                <span class="field-label">Identity</span>
+                <span class="field-value">Rakesh Vadnala</span>
+                <span class="field-label">Role</span>
+                <span class="field-value">IAM Technical Consultant</span>
+              </div>
+            </div>
+
+            <div class="id-badge__grid">
+              <div>
+                <span class="field-label">Clearance</span>
+                <span class="field-value field-value--mono">SailPoint IIQ · Saviynt EIC</span>
+              </div>
+              <div>
+                <span class="field-label">Location</span>
+                <span class="field-value field-value--mono">Dubai, UAE</span>
+              </div>
+              <div>
+                <span class="field-label">Credential ID</span>
+                <span class="field-value field-value--mono">IAM-2022-RVD</span>
+              </div>
+              <div>
+                <span class="field-label">Valid</span>
+                <span class="field-value field-value--mono">2022 — Present</span>
+              </div>
+            </div>
+
+            <div class="id-badge__barcode" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="id-badge__glow" aria-hidden="true"></div>
+      </div>
+
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span>Scroll</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">01 / About</p>
+      <h2 class="section-title reveal-up">Profile summary</h2>
+
+      <div class="about__grid">
+        <p class="about__text reveal-up">
+          IAM professional with <strong>5+ years</strong> of experience designing, implementing, integrating,
+          configuring, and supporting SailPoint IdentityIQ solutions — including <strong>2 years</strong> of
+          focused work in Saviynt Enterprise Identity Cloud. Experienced across application onboarding, RBAC,
+          access reviews, lifecycle management, governance, connector development, custom integrations,
+          analytics reporting, and production support.
+          <br><br>
+          Proficient in end-to-end IAM delivery: requirement analysis, development, testing, upgrades,
+          troubleshooting, deployment, and maintenance — with a consistent record of shipping scalable,
+          audit-ready identity solutions for enterprise stakeholders.
+        </p>
+
+        <div class="about__panel reveal-up">
+          <div class="log-line"><span class="log-time">[env]</span><span class="log-text">Windows Server 2016/2019/2022 · Linux · CentOS · RHEL7</span></div>
+          <div class="log-line"><span class="log-time">[lang]</span><span class="log-text">Java / J2EE · Python</span></div>
+          <div class="log-line"><span class="log-time">[db]</span><span class="log-text">Oracle · MySQL 5.0 &amp; 8 · MSSQL Server 2018+</span></div>
+          <div class="log-line"><span class="log-time">[server]</span><span class="log-text">IBM WebSphere · JBoss · Tomcat · IIS</span></div>
+          <div class="log-line"><span class="log-time">[tools]</span><span class="log-text">Eclipse · Apache Directory Studio · Postman · WinSCP</span></div>
+          <div class="log-line log-line--ok"><span class="log-time">[status]</span><span class="log-text">Available for engagements</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Employment -->
-    <div class="card">
-      <div class="section-title">Employment History</div>
-      <div class="xp-item">
-        <div class="xp-title">IAM Technical Consultant</div>
-        <div class="xp-meta"><span class="xp-company">RNS Technology Services</span> &nbsp;·&nbsp; 2024 – Present</div>
-        <ul class="skill-list" style="margin-top:4px;">
-          <li>Lead technical consulting engagements for enterprise IAM deployments across UAE.</li>
-          <li>Architect and deliver SailPoint IIQ solutions for large-scale banking and defence clients.</li>
+  <!-- ============ EXPERTISE ============ -->
+  <section class="section section--alt" id="expertise">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">02 / Expertise</p>
+      <h2 class="section-title reveal-up">Two platforms, one governance discipline</h2>
+      <p class="section-lede reveal-up">Hands-on delivery across the two leading enterprise identity governance platforms — from OOTB connector setup to custom workflow engineering.</p>
+
+      <div class="platform-grid">
+        <article class="platform-card reveal-up">
+          <div class="platform-card__head">
+            <span class="platform-card__tag">Platform 01</span>
+            <h3>SailPoint IdentityIQ</h3>
+          </div>
+          <ul class="platform-card__list">
+            <li>Installed &amp; configured IIQ across Development, UAT, and Production environments</li>
+            <li>Configured OOTB connectors, tasks, account &amp; group aggregation</li>
+            <li>Built custom workflows for Birthright, Event-Based, and Attribute-Change provisioning</li>
+            <li>Implemented RBAC provisioning, quick links, and dynamic visibility dashboards</li>
+            <li>Designed custom MFA and email-based JML approval workflows</li>
+            <li>SSO via Azure SAML and Active Directory Kerberos</li>
+            <li>Integrated IdentityIQ with Splunk for SIEM log monitoring</li>
+            <li>Desktop Password Reset &amp; Password Interceptor configuration</li>
+            <li>JDBC global provisioning rules &amp; Web Service before/after-provisioning rules</li>
+            <li>Custom PowerShell scripting for Wallix PAM where OOTB fell short</li>
+          </ul>
+        </article>
+
+        <article class="platform-card platform-card--accent reveal-up">
+          <div class="platform-card__head">
+            <span class="platform-card__tag">Platform 02</span>
+            <h3>Saviynt Enterprise Identity Cloud</h3>
+          </div>
+          <ul class="platform-card__list">
+            <li>Implemented RBAC models enforcing least-privilege identity governance</li>
+            <li>Configured Saviynt technical rules, workflows, and policy controls</li>
+            <li>End-to-end application onboarding — connectors, entitlement mapping, account correlation</li>
+            <li>Built custom dashboards and analytics reports for governance visibility</li>
+            <li>Managed Access Review &amp; Certification campaigns, escalation, and audit reporting</li>
+            <li>Supported Joiner-Mover-Leaver lifecycle automation</li>
+            <li>SC2.0 setup, environment validation, and system integration</li>
+            <li>ADSI integration and Win-PS setup for Active Directory connectivity</li>
+            <li>Orphan account analysis and SoD monitoring &amp; mitigation</li>
+            <li>REST API integrations for centralized identity governance</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="onboard-strip reveal-up">
+        <span class="onboard-strip__label">Applications onboarded across both platforms</span>
+        <div class="onboard-strip__tags">
+          <span>Active Directory</span><span>LDAP</span><span>JDBC</span><span>Web Services</span>
+          <span>Windows Local</span><span>Linux Direct</span><span>SharePoint</span><span>MSSQL</span>
+          <span>Delimited Files</span><span>SIQ (FAM)</span><span>Cloud Gateway</span><span>Salesforce</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">03 / Experience</p>
+      <h2 class="section-title reveal-up">Audit trail</h2>
+      <p class="section-lede reveal-up">A record of roles held, in order — click an entry to expand full responsibilities.</p>
+
+      <div class="timeline" id="timeline">
+
+        <details class="timeline__entry reveal-up" open>
+          <summary class="timeline__summary">
+            <span class="timeline__dot timeline__dot--active"></span>
+            <span class="timeline__time">2022-09 → PRESENT</span>
+            <span class="timeline__role">IAM Technical Consultant</span>
+            <span class="timeline__org">RNS Technology Services</span>
+            <span class="timeline__chip timeline__chip--active">ACTIVE</span>
+            <svg class="timeline__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="timeline__body">
+            <p>Strategic consulting and implementation of IAM solutions — requirements gathering, problem analysis, and delivery focused on high availability, performance, scalability, and security.</p>
+            <ul>
+              <li>Application onboarding and integration across SailPoint IIQ and Saviynt</li>
+              <li>Custom workflow development in SailPoint</li>
+              <li>Plugin development for platform extensions</li>
+              <li>User provisioning / de-provisioning and Joiner-Mover-Leaver automation</li>
+              <li>Access request and approval configuration; user self-service automation</li>
+              <li>Requirements analysis, solution design, and documentation</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="timeline__entry reveal-up">
+          <summary class="timeline__summary">
+            <span class="timeline__dot"></span>
+            <span class="timeline__time">2021-09 → 2024-04</span>
+            <span class="timeline__role">Associate IAM Technical Consultant</span>
+            <span class="timeline__org">RNS Technology Services</span>
+            <span class="timeline__chip">COMPLETE</span>
+            <svg class="timeline__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="timeline__body">
+            <p>IAM implementation engineer specializing in identity governance, focused on user provisioning, compliance, and workflow development while managing Joiner/Leaver scenarios.</p>
+            <ul>
+              <li>Application onboarding and integration; custom workflow development</li>
+              <li>Access request / approval configuration and self-service automation</li>
+              <li>Support, maintenance, and testing for seamless operations</li>
+              <li>Skills applied: SailPoint, LCM, Active Directory, CyberArk, SSO, MFA, Java, REST APIs</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="timeline__entry reveal-up">
+          <summary class="timeline__summary">
+            <span class="timeline__dot"></span>
+            <span class="timeline__time">2021-04 → 2021-09</span>
+            <span class="timeline__role">IAM Intern</span>
+            <span class="timeline__org">RNS Technology Services</span>
+            <span class="timeline__chip">COMPLETE</span>
+            <svg class="timeline__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="timeline__body">
+            <p>Trained in SailPoint IdentityIQ for Identity and Access Management, with hands-on experience shadowing multiple live projects — building a technical foundation in IAM delivery.</p>
+            <ul>
+              <li>Shadowed provisioning, LCM, and SSO/MFA implementations</li>
+              <li>Exposure to Microsoft SQL Server, Bash, REST APIs, XML, Active Directory</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="timeline__entry reveal-up">
+          <summary class="timeline__summary">
+            <span class="timeline__dot"></span>
+            <span class="timeline__time">2020-02 → 2020-07</span>
+            <span class="timeline__role">Operations Executive</span>
+            <span class="timeline__org">Jugnoo Franchise</span>
+            <span class="timeline__chip">COMPLETE</span>
+            <svg class="timeline__caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="timeline__body">
+            <p>Managed commercial operations, expenses, and budgets; monitored performance of internal and external service providers ahead of transitioning into IAM.</p>
+            <ul>
+              <li>Business planning and long-term operational strategy</li>
+              <li>Facility upkeep, spend approval, and performance tracking</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES (filterable) ============ -->
+  <section class="section section--alt" id="capabilities">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">04 / Capabilities</p>
+      <h2 class="section-title reveal-up">What I build with it</h2>
+      <p class="section-lede reveal-up">Filter by discipline to see specific, delivered work across provisioning, governance, integration, and security.</p>
+
+      <div class="filter-bar reveal-up" id="filterBar" role="tablist" aria-label="Filter capabilities">
+        <button class="filter-btn is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="provisioning" role="tab" aria-selected="false">Provisioning &amp; Lifecycle</button>
+        <button class="filter-btn" data-filter="governance" role="tab" aria-selected="false">Governance &amp; Compliance</button>
+        <button class="filter-btn" data-filter="integration" role="tab" aria-selected="false">Integration &amp; Connectors</button>
+        <button class="filter-btn" data-filter="security" role="tab" aria-selected="false">Security &amp; Auth</button>
+      </div>
+
+      <div class="capability-grid" id="capabilityGrid">
+
+        <article class="cap-card reveal-up" data-category="provisioning">
+          <span class="cap-card__index">JML</span>
+          <h3>Joiner-Mover-Leaver automation</h3>
+          <p>End-to-end lifecycle automation for provisioning, deprovisioning, and role transitions across SailPoint and Saviynt.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="provisioning">
+          <span class="cap-card__index">WF</span>
+          <h3>Custom workflow engineering</h3>
+          <p>Birthright provisioning, event-based provisioning, and attribute-change workflows synchronized to target applications.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="integration">
+          <span class="cap-card__index">APP</span>
+          <h3>Application onboarding</h3>
+          <p>AD, LDAP, JDBC, Web Services, Windows Local, Linux Direct, SharePoint, MSSQL, Delimited Files, SIQ, Cloud Gateway, Salesforce.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="governance">
+          <span class="cap-card__index">RBAC</span>
+          <h3>Role-based access control</h3>
+          <p>RBAC models enforcing least-privilege, with role and entitlement configuration across workgroups and populations.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="governance">
+          <span class="cap-card__index">CERT</span>
+          <h3>Access review &amp; certification</h3>
+          <p>Reviewer assignment, remediation tracking, escalation handling, and audit-ready certification reporting.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="governance">
+          <span class="cap-card__index">SoD</span>
+          <h3>SoD analysis &amp; mitigation</h3>
+          <p>Segregation-of-duties analysis, orphan account detection, and compliance risk reduction.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="integration">
+          <span class="cap-card__index">API</span>
+          <h3>REST / SOAP integration</h3>
+          <p>Custom connector configuration and API-driven integrations for centralized identity governance.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="integration">
+          <span class="cap-card__index">SIEM</span>
+          <h3>Splunk log integration</h3>
+          <p>IdentityIQ integrated with Splunk for centralized event monitoring and operational visibility.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="security">
+          <span class="cap-card__index">SSO</span>
+          <h3>SSO &amp; MFA</h3>
+          <p>Azure SAML and Active Directory Kerberos single sign-on, plus custom multi-factor authentication design.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="security">
+          <span class="cap-card__index">PWD</span>
+          <h3>Password management</h3>
+          <p>Desktop password reset functionality and password interceptor configuration in complex environments.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="security">
+          <span class="cap-card__index">PAM</span>
+          <h3>PAM scripting</h3>
+          <p>Custom PowerShell scripts for the Wallix PAM application to retrieve user and access data beyond OOTB capability.</p>
+        </article>
+
+        <article class="cap-card reveal-up" data-category="provisioning">
+          <span class="cap-card__index">ENV</span>
+          <h3>Environment lifecycle</h3>
+          <p>Installation, configuration, database upgrades, backup/restore, and SSL troubleshooting across Dev, UAT, and Prod.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">05 / Certifications</p>
+      <h2 class="section-title reveal-up">Credentials on file</h2>
+
+      <div class="badge-grid">
+        <div class="cert-badge reveal-up">
+          <div class="cert-badge__seal">✓</div>
+          <h3>Saviynt Certified IGA Professional</h3>
+          <span class="cert-badge__issuer">Saviynt</span>
+        </div>
+        <div class="cert-badge reveal-up">
+          <div class="cert-badge__seal">✓</div>
+          <h3>IdentityIQ Implementation: Advanced Provisioning &amp; Workflows</h3>
+          <span class="cert-badge__issuer">SailPoint</span>
+        </div>
+        <div class="cert-badge reveal-up">
+          <div class="cert-badge__seal">✓</div>
+          <h3>SailPoint Identity Security Leader Credential</h3>
+          <span class="cert-badge__issuer">SailPoint</span>
+        </div>
+        <div class="cert-badge reveal-up">
+          <div class="cert-badge__seal">✓</div>
+          <h3>Network Essentials</h3>
+          <span class="cert-badge__issuer">Certification</span>
+        </div>
+        <div class="cert-badge reveal-up">
+          <div class="cert-badge__seal">✓</div>
+          <h3>CyberArk Trustee Certification</h3>
+          <span class="cert-badge__issuer">CyberArk</span>
+        </div>
+      </div>
+
+      <div class="education-strip reveal-up">
+        <div class="education-strip__icon">🎓</div>
+        <div>
+          <h3>Bachelor of Technology — Electrical &amp; Electronics Engineering</h3>
+          <span class="field-label">2015 — 2019</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact__grid">
+
+      <div class="contact__intro reveal-up">
+        <p class="section-eyebrow">06 / Contact</p>
+        <h2 class="section-title">Request access</h2>
+        <p class="section-lede">
+          Open to IAM consulting engagements, SailPoint &amp; Saviynt implementation work, and
+          governance advisory. Based in Dubai, UAE — available for remote and on-site delivery.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="field-label">Email</span>
+            <div class="contact-copy">
+              <a href="mailto:rakeshvadnala@gmail.com" class="field-value field-value--mono">rakeshvadnala@gmail.com</a>
+              <button class="copy-btn" id="copyEmailBtn" type="button" data-email="rakeshvadnala@gmail.com" aria-label="Copy email address">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                <span>Copy</span>
+              </button>
+            </div>
+          </li>
+          <li>
+            <span class="field-label">Phone</span>
+            <a href="tel:+971523176892" class="field-value field-value--mono">+971 00 000 0000</a>
+          </li>
+          <li>
+            <span class="field-label">Location</span>
+            <span class="field-value field-value--mono">Dubai, United Arab Emirates</span>
+          </li>
+          <li>
+            <span class="field-label">Elsewhere</span>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/rakeshvadnala" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+              <a href="https://github.com/rakeshvadnala" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+            </div>
+          </li>
         </ul>
       </div>
-      <div class="xp-item">
-        <div class="xp-title">Associate IAM Consultant</div>
-        <div class="xp-meta"><span class="xp-company">RNS Technology Services</span> &nbsp;·&nbsp; 2021 – 2024</div>
-        <ul class="skill-list" style="margin-top:4px;">
-          <li>Configured and customized SailPoint IIQ workflows, rules, and certifications.</li>
-          <li>Delivered JML lifecycle automation and RBAC implementations for enterprise clients.</li>
-        </ul>
-      </div>
-      <div class="xp-item">
-        <div class="xp-title">IAM Intern</div>
-        <div class="xp-meta"><span class="xp-company">RNS Technology Services</span> &nbsp;·&nbsp; 2021</div>
-        <ul class="skill-list" style="margin-top:4px;">
-          <li>Supported connector configuration, identity aggregation, and basic provisioning tasks.</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Technical Skills -->
-    <div class="card">
-      <div class="section-title">Technical Skills &amp; Experience</div>
-      <ul class="skill-list">
-        <li>Deployment, implementation, configuration, and customization of SailPoint IdentityIQ with strong expertise in integrating enterprise applications using various connectors.</li>
-        <li>Hands-on experience in Identity Governance: JML (Joiner, Mover, Leaver), access requests, certifications, provisioning, user lifecycle management, RBAC, workflows, and access policy enforcement.</li>
-        <li>Strong knowledge implementing custom rules, forms, workflows, and configuring multiple types of access certifications.</li>
-        <li>Proficient in SAML, SSO, Java, Web Services, SoD (Segregation of Duties), auditing, custom reporting, password management, and OOTB + custom connector development.</li>
-        <li>Skilled in troubleshooting complex integration issues across heterogeneous enterprise systems.</li>
-      </ul>
-    </div>
-
-    <!-- Key Integrations -->
-    <div class="card">
-      <div class="section-title">Key Integrations &amp; Development</div>
-      <ul class="skill-list">
-        <li>Delivered custom IdentityIQ connectors for banking and enterprise applications including target system and authoritative source integrations.</li>
-        <li>Built integration modules for ITSM platforms (ServiceNow) enabling access request, approval, and fulfillment automation.</li>
-        <li>Developed reusable framework components to standardize provisioning logic and accelerate connector development.</li>
-        <li>Implemented event-driven and workflow-based integrations for complex business provisioning and deprovisioning scenarios.</li>
-        <li>Designed multi-site and multi-domain identity integrations using secure cloud gateway architecture for high availability.</li>
-        <li>REST and SOAP-based web service integrations for real-time provisioning across heterogeneous systems.</li>
-        <li>Custom rules (BeanShell/Java) for attribute transformation, entitlement mapping, and dynamic provisioning decisions.</li>
-        <li>Data aggregation and correlation logic for identity reconciliation across multiple authoritative sources.</li>
-        <li>SAML-based SSO integrations and API token-based authentication for external systems.</li>
-        <li>Optimized integration performance through batch processing, throttling, and incremental aggregation strategies.</li>
-        <li>Secure data exchange between on-premise and cloud systems via encrypted channels and proxy-based connectivity.</li>
-      </ul>
-    </div>
-
-    <!-- Key Projects -->
-    <div class="card">
-      <div class="section-title">Key Projects</div>
-      <div class="badges">
-        <span class="badge badge-cyan">JML Lifecycle Automation</span>
-        <span class="badge badge-cyan">Access Request Management</span>
-        <span class="badge badge-purple">RBAC Design &amp; Implementation</span>
-        <span class="badge badge-purple">App Onboarding (AD, LDAP, JDBC)</span>
-        <span class="badge badge-green">Compliance Certifications (SOX, ISO, GDPR)</span>
-        <span class="badge badge-green">Provisioning Engine Customization</span>
-        <span class="badge badge-orange">SoD Policy &amp; Risk Analysis</span>
-        <span class="badge badge-orange">Custom Plugin &amp; REST API Dev</span>
-        <span class="badge badge-cyan">Audit Dashboard Development</span>
-        <span class="badge badge-purple">IAM Migration &amp; IIQ Upgrades</span>
-      </div>
-    </div>
-
-  </div><!-- /left-col -->
-
-  <!-- ── RIGHT COLUMN ───────────────────────────────────── -->
-  <div class="right-col">
-
-    <!-- Technical Expertise -->
-    <div class="card">
-      <div class="section-title">Core Expertise</div>
-      <div class="tech-list">
-        <div class="tech-row">
-          <span class="tech-name">SailPoint IIQ</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:95%"></div></div>
+      <form class="contact-form reveal-up" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Your full name">
+          <span class="form-error" data-error-for="cf-name"></span>
         </div>
-        <div class="tech-row">
-          <span class="tech-name">JML / RBAC</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:92%"></div></div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="you@company.com">
+          <span class="form-error" data-error-for="cf-email"></span>
         </div>
-        <div class="tech-row">
-          <span class="tech-name">Workflows</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:90%"></div></div>
+        <div class="form-row">
+          <label for="cf-subject">Subject</label>
+          <input type="text" id="cf-subject" name="subject" required placeholder="What's this regarding?">
+          <span class="form-error" data-error-for="cf-subject"></span>
         </div>
-        <div class="tech-row">
-          <span class="tech-name">SCIM / REST</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:85%"></div></div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" required placeholder="Tell me about the engagement..."></textarea>
+          <span class="form-error" data-error-for="cf-message"></span>
         </div>
-        <div class="tech-row">
-          <span class="tech-name">SAML / SSO</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:85%"></div></div>
-        </div>
-        <div class="tech-row">
-          <span class="tech-name">Active Directory</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:88%"></div></div>
-        </div>
-        <div class="tech-row">
-          <span class="tech-name">ServiceNow</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:78%"></div></div>
-        </div>
-        <div class="tech-row">
-          <span class="tech-name">Saviynt</span>
-          <div class="tech-bar-track"><div class="tech-bar-fill" style="width:70%"></div></div>
-        </div>
-      </div>
+        <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+          <span class="btn__label">Submit request</span>
+          <span class="btn__loader" aria-hidden="true"></span>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
     </div>
+  </section>
 
-    <!-- Tech Stack -->
-    <div class="card">
-      <div class="section-title">Tech Stack</div>
-      <div class="badges">
-        <span class="badge badge-cyan">SailPoint</span>
-        <span class="badge badge-purple">Saviynt</span>
-        <span class="badge badge-cyan">Active Directory</span>
-        <span class="badge badge-green">Linux</span>
-        <span class="badge badge-orange">Splunk</span>
-        <span class="badge badge-purple">ServiceNow</span>
-        <span class="badge badge-cyan">LDAP</span>
-        <span class="badge badge-green">JDBC</span>
-        <span class="badge badge-orange">REST API</span>
-        <span class="badge badge-cyan">SOAP</span>
-      </div>
-    </div>
+</main>
 
-    <!-- Programming -->
-    <div class="card">
-      <div class="section-title">Programming</div>
-      <div class="lang-pill">
-        <div class="lang-dot" style="background:#f0a500;"></div>
-        Java
-      </div>
-      <div class="lang-pill">
-        <div class="lang-dot" style="background:#00d4ff;"></div>
-        BeanShell (IIQ Rules)
-      </div>
-      <div class="lang-pill">
-        <div class="lang-dot" style="background:#4ade80;"></div>
-        Python
-      </div>
-      <div class="lang-pill">
-        <div class="lang-dot" style="background:#a78bfa;"></div>
-        XML / JSON
-      </div>
-    </div>
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Rakesh Vadnala. Identity &amp; Access Management Consultant, Dubai.</p>
+    <p class="footer-note">Built with HTML, CSS &amp; vanilla JavaScript.</p>
+  </div>
+</footer>
 
-    <!-- Domains -->
-    <div class="card">
-      <div class="section-title">Industry Domains</div>
-      <div class="badges">
-        <span class="badge badge-orange">Banking</span>
-        <span class="badge badge-cyan">Telecom</span>
-        <span class="badge badge-purple">Defence &amp; Military</span>
-        <span class="badge badge-green">Healthcare</span>
-      </div>
-    </div>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg>
+</button>
 
-    <!-- Compliance -->
-    <div class="card">
-      <div class="section-title">Compliance &amp; Standards</div>
-      <div class="badges">
-        <span class="badge badge-orange">SOX</span>
-        <span class="badge badge-cyan">ISO 27001</span>
-        <span class="badge badge-green">GDPR</span>
-        <span class="badge badge-purple">SoD Policies</span>
-        <span class="badge badge-cyan">RBAC Governance</span>
-      </div>
-    </div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  </div><!-- /right-col -->
-
-</div><!-- /resume-grid -->
-</div><!-- /page-wrap -->
-
-<script>
-  let isLight = false;
-
-  function toggleTheme() {
-    isLight = !isLight;
-    const body = document.body;
-    if (isLight) {
-      body.style.background = '#f0f4f8';
-      body.style.backgroundImage = 'radial-gradient(ellipse at 20% 20%, rgba(0,100,200,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(100,80,200,0.05) 0%, transparent 50%)';
-      document.documentElement.style.setProperty('--glass-bg', 'rgba(255,255,255,0.75)');
-      document.documentElement.style.setProperty('--glass-border', 'rgba(0,0,0,0.1)');
-      document.documentElement.style.setProperty('--text-primary', '#0f172a');
-      document.documentElement.style.setProperty('--text-secondary', '#334155');
-      document.documentElement.style.setProperty('--text-muted', '#64748b');
-      document.documentElement.style.setProperty('--card-shadow', '0 4px 24px rgba(0,0,0,0.08)');
-      document.documentElement.style.setProperty('--glass-hover', 'rgba(255,255,255,0.9)');
-    } else {
-      body.style.background = '';
-      body.style.backgroundImage = '';
-      document.documentElement.style.setProperty('--glass-bg', 'rgba(255,255,255,0.055)');
-      document.documentElement.style.setProperty('--glass-border', 'rgba(255,255,255,0.12)');
-      document.documentElement.style.setProperty('--text-primary', '#f0f4ff');
-      document.documentElement.style.setProperty('--text-secondary', 'rgba(200,215,255,0.7)');
-      document.documentElement.style.setProperty('--text-muted', 'rgba(150,175,220,0.5)');
-      document.documentElement.style.setProperty('--card-shadow', '0 8px 40px rgba(0,0,0,0.4)');
-      document.documentElement.style.setProperty('--glass-hover', 'rgba(255,255,255,0.09)');
-    }
-  }
-
-  function exportPDF() {
-    const btn = document.querySelector('.fab-group');
-    btn.style.display = 'none';
-
-    // Inject PDF-safe light styles
-    const style = document.createElement('style');
-    style.id = 'pdf-override';
-    style.textContent = `
-      body {
-        background: #f4f6fb !important;
-        background-image: none !important;
-        color: #0f172a !important;
-      }
-      body::before { display: none !important; }
-      .card {
-        background: #ffffff !important;
-        border: 1px solid #d1d9e6 !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
-      }
-      .card::before { display: none !important; }
-      .header-card {
-        background: linear-gradient(135deg, #e8f4ff, #eef0ff) !important;
-        border: 1px solid #c5d5f0 !important;
-      }
-      .header-left h1 {
-        background: linear-gradient(135deg, #0a2540, #1a56b0) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-      }
-      .title-badge {
-        background: rgba(0,100,200,0.08) !important;
-        border-color: rgba(0,100,200,0.25) !important;
-        color: #1a56b0 !important;
-      }
-      .title-badge::before { background: #1a56b0 !important; box-shadow: none !important; }
-      .section-title { color: #1a56b0 !important; }
-      .section-title::after { background: linear-gradient(90deg, rgba(26,86,176,0.3), transparent) !important; }
-      .xp-item { border-left-color: rgba(26,86,176,0.3) !important; }
-      .xp-item::before { background: #1a56b0 !important; box-shadow: none !important; }
-      .xp-title { color: #0f172a !important; }
-      .xp-meta { color: #64748b !important; }
-      .xp-company { color: #1a56b0 !important; }
-      .skill-list li { color: #334155 !important; }
-      .skill-list li::before { color: #1a56b0 !important; }
-      .summary-text { color: #334155 !important; }
-      .summary-text strong { color: #1a56b0 !important; }
-      .stat-box { background: rgba(26,86,176,0.05) !important; border-color: rgba(26,86,176,0.15) !important; }
-      .stat-num { color: #1a56b0 !important; }
-      .stat-label { color: #64748b !important; }
-      .tech-name { color: #334155 !important; }
-      .tech-bar-track { background: #e2e8f0 !important; }
-      .tech-bar-fill { background: linear-gradient(90deg, #1a56b0, #7c6bff) !important; box-shadow: none !important; }
-      .lang-pill { background: #f8fafc !important; border-color: #e2e8f0 !important; color: #334155 !important; }
-      .contact-item { color: #334155 !important; }
-      .contact-item i { color: #1a56b0 !important; }
-      .badge-cyan { background: rgba(0,120,200,0.08) !important; border-color: rgba(0,120,200,0.2) !important; color: #0a6abf !important; }
-      .badge-purple { background: rgba(100,80,200,0.07) !important; border-color: rgba(100,80,200,0.2) !important; color: #5b48c2 !important; }
-      .badge-green { background: rgba(20,140,80,0.07) !important; border-color: rgba(20,140,80,0.2) !important; color: #0f7a47 !important; }
-      .badge-orange { background: rgba(180,100,0,0.07) !important; border-color: rgba(180,100,0,0.2) !important; color: #a05a00 !important; }
-    `;
-    document.head.appendChild(style);
-
-    const element = document.getElementById('resume');
-
-    const opt = {
-      margin: [8, 8, 8, 8],
-      filename: 'Rakesh_Vadnala_IAM_Resume.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: {
-        scale: 2,
-        scrollY: 0,
-        useCORS: true,
-        backgroundColor: '#f4f6fb'
-      },
-      jsPDF: {
-        unit: 'mm',
-        format: 'a4',
-        orientation: 'portrait'
-      },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-    };
-
-    html2pdf().set(opt).from(element).save().then(() => {
-      document.getElementById('pdf-override').remove();
-      btn.style.display = 'flex';
-    });
-  }
-</script>
-
+<script src="js/script.js"></script>
+<script src="js/custom-ui.js"></script>
 </body>
 </html>
