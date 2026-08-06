@@ -1,154 +1,132 @@
-<h1 align="center">Hi, I'm Rakesh Vadnala 👋</h1>
+# Rakesh Vadnala — IAM Portfolio
 
-<p align="center">
-  <b>IAM Technical Consultant · SailPoint IdentityIQ Specialist</b><br/>
-  📍 Dubai, UAE &nbsp;|&nbsp;
-  ✉️ <a href="mailto:rakeshvadnala@gmail.com">rakeshvadnala@gmail.com</a> &nbsp;|&nbsp;
-  🔗 <a href="https://linkedin.com/in/rakeshvadnala">LinkedIn</a>
-</p>
+A single-page portfolio site for an Identity & Access Management (IAM) Technical
+Consultant, built with plain HTML5, CSS3, and vanilla JavaScript (ES6+). No
+frameworks, no build tools — open `index.html` and it runs.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/SailPoint-IIQ-00b4d8?style=for-the-badge&logo=sailpoint&logoColor=white"/>
-  <img src="https://img.shields.io/badge/IAM-Consultant-7c6bff?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Experience-5%2B%20Years-00c896?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Location-Dubai%2C%20UAE-f0a500?style=for-the-badge&logo=googlemaps&logoColor=white"/>
-</p>
+**Design concept:** the site borrows its visual language from the world of
+identity governance itself — an animated digital access badge in the hero,
+an "audit trail" timeline for work history, and status/clearance styling
+throughout — so the design reinforces what the content is about.
 
 ---
 
-## 🧑‍💼 About Me
+## Features
 
-IAM professional with **5+ years** of progressive experience — from Intern to Technical Consultant at **RNS Technology Services**. I specialize in **SailPoint IdentityIQ**, enterprise application integrations, and identity governance solutions delivered across **India and the UAE**.
-
-I have deep expertise in IAM/PAM systems, product implementation, and enterprise architecture serving clients in **Banking, Telecom, Defence & Military, and Healthcare** sectors.
-
----
-
-## 🏢 Experience
-
-| Role | Company | Period |
-|------|---------|--------|
-| 🔵 **IAM Technical Consultant** | RNS Technology Services | 2024 – Present |
-| 🟣 **Associate IAM Consultant** | RNS Technology Services | 2021 – 2024 |
-| ⚪ **IAM Intern** | RNS Technology Services | 2021 |
-
----
-
-## 🛠️ Core Technical Skills
-
-### Identity & Access Management
-- **SailPoint IdentityIQ** — deployment, implementation, configuration & customization
-- Identity Governance: **JML (Joiner, Mover, Leaver)**, access requests, certifications, provisioning
-- User lifecycle management, **RBAC**, workflows, and access policy enforcement
-- Custom rules, forms, workflows, and access certification configuration
-- **SAML, SSO**, SoD (Segregation of Duties), auditing, custom reporting, password management
-- OOTB and custom connector development
-
-### Integrations & Development
-- Custom IdentityIQ connectors for banking and enterprise applications (target + authoritative source)
-- ITSM integrations — **ServiceNow** access request, approval & fulfillment automation
-- Event-driven and workflow-based provisioning/deprovisioning integrations
-- **REST** and **SOAP**-based web service integrations for real-time account management
-- Custom **BeanShell/Java** rules for attribute transformation and entitlement mapping
-- Data aggregation and correlation logic for identity reconciliation across multiple sources
-- SAML-based SSO and API token-based authentication for external systems
-- Multi-site, multi-domain identity integrations using secure cloud gateway architecture
-- Batch processing, throttling, and incremental aggregation for performance optimization
+- Single-page layout: Hero, About, Expertise (SailPoint vs. Saviynt), Experience
+  timeline, filterable Capabilities grid, Certifications, and Contact.
+- Animated "ID badge" hero visual with scanline sweep and mouse-tilt interaction.
+- Dark/light theme toggle with `localStorage` persistence and system-preference
+  fallback.
+- Typing animation, scroll-spy navigation, smooth scrolling, and a scroll
+  progress bar.
+- Scroll-triggered reveal animations and animated stat counters.
+- Filterable capability cards (Provisioning, Governance, Integration, Security).
+- Contact form with client-side validation and a simulated submit flow
+  (no backend — see *Wiring the contact form* below).
+- Copy-to-clipboard email button, résumé download, and a back-to-top button.
+- Ambient "identity graph" canvas background — capped node count, pauses when
+  the tab is hidden, and respects `prefers-reduced-motion`.
+- Fully responsive, keyboard-accessible (visible focus states, skip link),
+  and safe for GitHub Pages as-is.
 
 ---
 
-## 💻 Tech Stack
+## Folder structure
 
-### IAM Platforms
-![SailPoint](https://img.shields.io/badge/SailPoint_IIQ-00b4d8?style=flat-square)
-![Saviynt](https://img.shields.io/badge/Saviynt-7c6bff?style=flat-square)
-
-### Directory & Infrastructure
-![Active Directory](https://img.shields.io/badge/Active_Directory-0078d4?style=flat-square&logo=microsoft&logoColor=white)
-![LDAP](https://img.shields.io/badge/LDAP-555555?style=flat-square)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-
-### Integration & Protocols
-![REST](https://img.shields.io/badge/REST_API-00c896?style=flat-square)
-![SOAP](https://img.shields.io/badge/SOAP-f0a500?style=flat-square)
-![SCIM](https://img.shields.io/badge/SCIM-7c6bff?style=flat-square)
-![SAML](https://img.shields.io/badge/SAML-00b4d8?style=flat-square)
-![JDBC](https://img.shields.io/badge/JDBC-555555?style=flat-square)
-![ServiceNow](https://img.shields.io/badge/ServiceNow-62d84e?style=flat-square&logo=servicenow&logoColor=black)
-
-### Monitoring
-![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat-square&logo=splunk&logoColor=white)
-
-### Programming
-![Java](https://img.shields.io/badge/Java-f0a500?style=flat-square&logo=openjdk&logoColor=white)
-![BeanShell](https://img.shields.io/badge/BeanShell-00b4d8?style=flat-square)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![XML](https://img.shields.io/badge/XML%20%2F%20JSON-555555?style=flat-square)
+```text
+portfolio/
+│
+├── index.html
+├── Rakesh_Vadnala_Resume.pdf   (linked by the "Download Résumé" buttons)
+├── css/
+│   ├── custom-ui.css           (effects, animation, badge, theme polish)
+│   └── style.css                (tokens, layout, typography, responsive)
+├── js/
+│   ├── custom-ui.js             (reveals, counters, tilt, canvas nodes)
+│   └── script.js                 (nav, theme, form, filtering, utilities)
+└── README.md
+```
 
 ---
 
-## 🚀 Key Projects
+## Customization guide
 
-| Project | Description |
-|---------|-------------|
-| **JML Lifecycle Automation** | End-to-end Joiner/Mover/Leaver automation using IIQ workflows |
-| **Access Request Management** | Custom approval workflow design and implementation |
-| **RBAC Design & Implementation** | Role-based access control architecture for enterprise clients |
-| **App Onboarding** | AD, LDAP, JDBC, and custom connector-based application onboarding |
-| **Compliance Certifications** | Access certification campaigns for SOX, ISO 27001, and GDPR |
-| **Provisioning Engine Customization** | Custom rules and workflow-based provisioning logic |
-| **SoD Policy & Risk Analysis** | Segregation of Duties configuration and conflict analysis |
-| **Custom Plugin & REST API Dev** | UI extensions and REST API development for IIQ |
-| **Audit Dashboard Development** | Custom reporting and compliance dashboards |
-| **IAM Migration & IIQ Upgrades** | Version migration and upgrade management for IdentityIQ |
+**Colors, type, spacing** — every design token lives at the top of
+`css/style.css` inside `:root` (dark theme) and `[data-theme="light"]`
+(light theme). Change a hex value once and it propagates everywhere.
 
----
+**Content** — all copy lives directly in `index.html`, grouped by section
+with HTML comments (`<!-- ============ HERO ============ -->`, etc.). Edit
+text in place; no templating layer to fight with.
 
-## 🏭 Industry Domains
+**Capability filter categories** — each card in the Capabilities section
+carries a `data-category` attribute (`provisioning`, `governance`,
+`integration`, `security`). Add a new card with the right attribute and it's
+automatically picked up by the existing filter buttons; add a new filter
+button with a matching `data-filter` value to introduce a new category.
 
-![Banking](https://img.shields.io/badge/Banking-f0a500?style=flat-square)
-![Telecom](https://img.shields.io/badge/Telecom-00b4d8?style=flat-square)
-![Defence](https://img.shields.io/badge/Defence_%26_Military-7c6bff?style=flat-square)
-![Healthcare](https://img.shields.io/badge/Healthcare-00c896?style=flat-square)
+**Typing animation words** — edit the `WORDS` array near the top of
+`js/script.js`.
 
----
-
-## 📋 Compliance & Standards
-
-![SOX](https://img.shields.io/badge/SOX-f0a500?style=flat-square)
-![ISO 27001](https://img.shields.io/badge/ISO_27001-00b4d8?style=flat-square)
-![GDPR](https://img.shields.io/badge/GDPR-00c896?style=flat-square)
-![SoD](https://img.shields.io/badge/SoD_Policies-7c6bff?style=flat-square)
-![RBAC](https://img.shields.io/badge/RBAC_Governance-00b4d8?style=flat-square)
+**Ambient background node count** — tune `NODE_COUNT` and `LINK_DIST` in the
+`initNodes()` function inside `js/custom-ui.js` if you want a denser or
+sparser effect.
 
 ---
 
-## 📊 Quick Stats
+## How to update your résumé information
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Years%20of%20Experience-5%2B-00b4d8?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Projects%20Delivered-10%2B-7c6bff?style=for-the-badge"/>
-  &nbsp;
-  <img src="https://img.shields.io/badge/Industry%20Sectors-4-00c896?style=for-the-badge"/>
-</p>
+1. **Page content** — edit the relevant section directly in `index.html`
+   (Profile Summary → `#about`, IT Forte → `#about` panel, work history →
+   `#experience`, certifications → `#certifications`, contact details →
+   `#contact`).
+2. **Downloadable PDF** — replace `Rakesh_Vadnala_Resume.pdf` at the project
+   root with your updated file, keeping the same filename (or update the two
+   `href="Rakesh_Vadnala_Resume.pdf"` references in `index.html` if you
+   rename it).
 
----
+### Wiring the contact form
 
-## 📬 Get in Touch
+The form validates input and shows a success state, but it doesn't send
+anywhere yet — there's no backend in a static site. To make it functional,
+either:
 
-<p align="center">
-  <a href="mailto:rakeshvadnala@gmail.com">
-    <img src="https://img.shields.io/badge/Email-rakeshvadnala%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  &nbsp;
-  <a href="https://linkedin.com/in/rakeshvadnala">
-    <img src="https://img.shields.io/badge/LinkedIn-rakeshvadnala-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-</p>
+- Point the `<form>` at a form-backend service (e.g. Formspree, Getform) and
+  let it submit natively, or
+- Replace the `setTimeout` simulation in the `submit` handler inside
+  `js/script.js` with a real `fetch()` call to your endpoint of choice.
 
 ---
 
-<p align="center">
-  <i>"Securing identities, governing access, enabling enterprise trust."</i>
-</p>
+## Deploying to GitHub Pages
+
+1. Create a repository and push the contents of this `portfolio/` folder to
+   the `main` branch (`index.html` should sit at the repository root, or in
+   `/docs` if you prefer that layout).
+2. In the repository, go to **Settings → Pages**.
+3. Under **Build and deployment → Source**, choose **Deploy from a branch**.
+4. Select the `main` branch and the `/ (root)` folder (or `/docs`), then save.
+5. GitHub publishes the site at `https://<username>.github.io/<repo>/` within
+   a few minutes — no build step required, since this is plain static HTML/CSS/JS.
+
+---
+
+## Browser compatibility
+
+Built on standard, widely-supported web platform features:
+
+- CSS: custom properties, Grid, Flexbox, `backdrop-filter`, `color-mix()`.
+- JS: `IntersectionObserver`, `requestAnimationFrame`, Clipboard API (with a
+  `document.execCommand` fallback), `localStorage`.
+
+Tested against current versions of Chrome, Edge, Firefox, and Safari. Older
+browsers without `color-mix()` or `backdrop-filter` support will still render
+correctly with slightly flatter surfaces (both are used for polish, not
+layout-critical).
+
+---
+
+## License
+
+Free to use, adapt, and deploy for personal or commercial purposes.
