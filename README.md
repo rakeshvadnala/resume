@@ -22,6 +22,7 @@ throughout — so the design reinforces what the content is about.
   progress bar.
 - Scroll-triggered reveal animations and animated stat counters.
 - Filterable capability cards (Provisioning, Governance, Integration, Security).
+- Certification badges link out to each credential's public verification page.
 - Contact form with client-side validation and a simulated submit flow
   (no backend — see *Wiring the contact form* below).
 - Copy-to-clipboard email button, résumé download, and a back-to-top button.
@@ -73,6 +74,23 @@ button with a matching `data-filter` value to introduce a new category.
 `initNodes()` function inside `js/custom-ui.js` if you want a denser or
 sparser effect.
 
+**Certification verification links** — each badge in `#certifications` is an
+`<a>` tag pointing at its issuer's public verification page:
+
+```html
+<a class="cert-badge reveal-up" href="YOUR_VERIFICATION_URL" target="_blank" rel="noopener noreferrer">
+  <div class="cert-badge__seal">✓</div>
+  <h3>Certification name</h3>
+  <span class="cert-badge__issuer">Issuer</span>
+  <span class="cert-badge__verify">Verify credential ...</span>
+</a>
+```
+
+Swap the `href` to update where a badge links, or drop the `<a>` wrapper down
+to a plain `<div class="cert-badge reveal-up">` (and remove the
+`cert-badge__verify` line) for a certification with no public link — it'll
+still render as a static, non-clickable badge.
+
 ---
 
 ## How to update your résumé information
@@ -85,6 +103,7 @@ sparser effect.
    root with your updated file, keeping the same filename (or update the two
    `href="Rakesh_Vadnala_Resume.pdf"` references in `index.html` if you
    rename it).
+3. **Certification links** — see *Certification verification links* above.
 
 ### Wiring the contact form
 

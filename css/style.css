@@ -630,14 +630,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   margin-bottom: 36px;
 }
 .cert-badge {
+  display: block;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 26px 22px;
   text-align: center;
-  transition: transform var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  transition: transform var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
-.cert-badge:hover { transform: translateY(-4px); border-color: var(--gold); }
+a.cert-badge { cursor: pointer; }
+.cert-badge:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: var(--shadow-soft); }
+.cert-badge__verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--cyan);
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+a.cert-badge:hover .cert-badge__verify,
+a.cert-badge:focus-visible .cert-badge__verify {
+  opacity: 1;
+  transform: translateY(0);
+}
 .cert-badge__seal {
   width: 46px; height: 46px;
   margin: 0 auto 16px;
